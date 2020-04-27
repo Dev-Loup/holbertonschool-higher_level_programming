@@ -2,7 +2,7 @@
 
 /**
  * check_cycle - checks if a linked list has a cycle in it
- * @head: pointer to head of the string
+ * @list: pointer to head of the string
  * Return: 0 if there is no cycles, 1 if a cycle is found
  **/
 int check_cycle(listint_t *list)
@@ -14,11 +14,11 @@ int check_cycle(listint_t *list)
 	while (rabbit)
 	{
 		turtle = turtle->next;
-		for(i = 0; i <= 1; i++)
+		for (i = 0; i <= 1; i++)
 		{
 			rabbit = rabbit->next;
 		}
-		if(rabbit == turtle)
+		if (rabbit == turtle)
 			return (1);
 	}
 	return (0);
