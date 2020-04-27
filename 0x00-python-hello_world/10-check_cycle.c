@@ -13,13 +13,14 @@ int check_cycle(listint_t *list)
 
 	while (rabbit)
 	{
-		turtle = turtle->next;
 		for (i = 0; i <= 1; i++)
 		{
 			rabbit = rabbit->next;
 		}
 		if (rabbit == turtle)
 			return (1);
+		else
+			turtle = turtle->next;
 	}
 	return (0);
 }
