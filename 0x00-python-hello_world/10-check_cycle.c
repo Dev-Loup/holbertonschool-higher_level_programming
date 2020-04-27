@@ -11,6 +11,8 @@ int check_cycle(listint_t *list)
 	listint_t *rabbit = list;
 	int i = 0;
 
+	if (!turtle || !turtle->next)
+		return (0);
 	while (rabbit && turtle)
 	{
 		for (i = 0; i <= 1; i++)
