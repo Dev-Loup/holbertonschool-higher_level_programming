@@ -13,7 +13,7 @@ int check_cycle(listint_t *list)
 
 	if (!turtle || !turtle->next)
 		return (0);
-	while (rabbit && turtle)
+	while (rabbit)
 	{
 		for (i = 0; i <= 1; i++)
 		{
@@ -21,8 +21,7 @@ int check_cycle(listint_t *list)
 		}
 		if (rabbit == turtle)
 			return (1);
-		else
-			turtle = turtle->next;
+		turtle = turtle->next;
 	}
 	return (0);
 }
