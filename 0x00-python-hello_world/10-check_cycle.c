@@ -17,8 +17,7 @@ int check_cycle(listint_t *list)
 		rabbit = rabbit->next->next;
 		if (rabbit == turtle)
 			return (1);
-		else
-			turtle = turtle->next;
+		turtle = turtle->next;
 	}
 	return (0);
 }
