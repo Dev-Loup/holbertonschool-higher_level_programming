@@ -15,10 +15,7 @@ int check_cycle(listint_t *list)
 	{
 		if (!turtle || !turtle->next)
 			break;
-		for (i = 0; i <= 1; i++)
-		{
-			rabbit = rabbit->next;
-		}
+		rabbit = rabbit->next->next;
 		if (rabbit == turtle)
 			return (1);
 		turtle = turtle->next;
