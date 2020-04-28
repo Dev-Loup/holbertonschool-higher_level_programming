@@ -10,11 +10,11 @@ int check_cycle(listint_t *list)
 	listint_t *turtle = list;
 	listint_t *rabbit = list;
 	int i = 0;
-
-	if (!turtle || !turtle->next)
-		return (0);
+	
 	while (rabbit)
 	{
+		if (!turtle || !turtle->next)
+			break;
 		for (i = 0; i <= 1; i++)
 		{
 			rabbit = rabbit->next;
