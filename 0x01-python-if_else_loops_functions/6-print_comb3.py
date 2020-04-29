@@ -6,3 +6,5 @@ for num in range(0, 100):
         continue
     if num < 89:
             print(", ", end="")
+    else:
+        print()
