@@ -7,5 +7,5 @@ def uppercase(str):
             letter = chr(uppercaser)
         else:
             letter = str[c]
-        print("{}".format(letter),end="")
+        print("{}".format(letter), end="")
     print()

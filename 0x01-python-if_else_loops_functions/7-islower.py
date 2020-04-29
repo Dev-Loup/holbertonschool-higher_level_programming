@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 def islower(c):
-    if c >= "a" and c <= "z":
+    chrcode = ord(c)
+    if chrcode >= 97 and chrcode <= 122:
         return True
     else:
         return False

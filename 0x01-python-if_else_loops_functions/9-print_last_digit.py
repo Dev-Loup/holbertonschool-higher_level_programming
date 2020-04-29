@@ -4,5 +4,5 @@ def print_last_digit(number):
         units = number % 10
     else:
         units = (number * -1) % 10
-    print("{:d}".format(units),end="")
+    print("{:d}".format(units), end="")
     return units

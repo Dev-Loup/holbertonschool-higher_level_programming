@@ -5,7 +5,7 @@ if number > 0:
     units = number % 10
 else:
     units = number % -10
-print("Last digit of {:d} is {:d} ".format(number, units),end="")
+print("Last digit of {:d} is {:d} ".format(number, units), end="")
 if units == 0:
     print("and is 0")
 elif units > 5:
