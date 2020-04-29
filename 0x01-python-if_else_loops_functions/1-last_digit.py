@@ -5,9 +5,10 @@ if number > 0:
     units = number % 10
 else:
     units = number % -10
+print("Last digit of {:d} is {:d} ".format(number, units),end="")
 if units == 0:
-    print("Last digit of {:d} is {:d} and is 0".format(number, units))
+    print("and is 0")
 elif units > 5:
-    print("Last digit of {:d} is {:d} and is greater than 5".format(number, units))
+    print("and is greater than 5")
 else:
-    print("Last digit of {:d} is {} and is less than 6 and not 0".format(number, units))
+    print("and is less than 6 and not 0")
