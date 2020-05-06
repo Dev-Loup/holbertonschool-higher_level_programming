@@ -21,11 +21,11 @@ int is_palindrome(listint_t **head)
 	for (idxhead = 0; idxhead < idxtail; idxhead++, idxtail--)
 	{
 		tail = *head;
-		for (mvtail = 0; mvtail <= idxtail; mvtail++)
+		for (mvtail = 0; mvtail < idxtail; mvtail++)
 		{
 			tail = tail->next;
 		}
-		if (nose != tail)
+		if (nose->n != tail->n)
 			return (0);
 		nose = nose->next;
 	}
