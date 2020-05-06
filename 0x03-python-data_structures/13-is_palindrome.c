@@ -23,7 +23,7 @@ int is_palindrome(listint_t **head)
 			idxtail++;
 		}
 		else
-			tail = tail-next;
+			tail = tail->next;
 	}
 	idxtail--;
 	for (idxhead = 0; idxhead < idxtail; idxhead++, idxtail--)
