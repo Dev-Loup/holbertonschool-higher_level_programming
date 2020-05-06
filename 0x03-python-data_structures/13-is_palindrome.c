@@ -9,6 +9,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *tail = *head;
 	listint_t *nose = *head;
+	listint_t *button;
 	int idxtail;
 	int mvtail;
 	int idxhead;
@@ -29,14 +30,12 @@ int is_palindrome(listint_t **head)
 	for (idxhead = 0; idxhead < idxtail; idxhead++, idxtail--)
 	{
 		tail = *head;
-		for (mvtail = 0; mvtail < idxtail; mvtail++)
+		for (mvtail = 0; mvtail < idxtail / 2; mvtail++)
 		{
-			if (tail->next)
-			{
-				tail = tail->next->next;
-				mvtail++;
-			}
+			button = tail->next;
 		}
+		while (button)
+			tail = button->next;
 		if (nose->n != tail->n)
 			return (0);
 		nose = nose->next;
