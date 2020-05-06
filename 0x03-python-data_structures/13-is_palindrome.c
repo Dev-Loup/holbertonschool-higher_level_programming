@@ -17,7 +17,13 @@ int is_palindrome(listint_t **head)
 		return (1);
 	for (idxtail = 0; tail; idxtail++)
 	{
-		tail = tail->next;
+		if (tail->next)
+		{
+			tail = tail->next->next;
+			idxtail++;
+		}
+		else
+			tail = tail-next;
 	}
 	idxtail--;
 	for (idxhead = 0; idxhead < idxtail; idxhead++, idxtail--)
