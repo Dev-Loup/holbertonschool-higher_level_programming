@@ -7,4 +7,3 @@ def safe_print_integer_err(value):
     except Exception as error:
         print('Exception: {:s}'.format(str(error)), file=stderr)
         return False
-
