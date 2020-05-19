@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-"""Square class declaration
+"""Square class creation
 """
-
-
 class Square:
-    """Empty class
+    """Bypass attributes or methods declaration
     """
     pass

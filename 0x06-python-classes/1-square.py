@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-class Square:
-"""Class Square declaration
-makes an square type class
+""" Class Square creation with size attributes.
 """
+class Square:
+    """Class Square declaration based on size.
+       Function requires to be provided with a correct size int.
+    """
     def __init__(self, size):
-        """__init__ initialize the class Square with size
+        """initialize Square size.
+
         Args:
-        size (int): Size if the square
+          size: the size of the square.
         """
-        self.size = size
+        self.__size = size
