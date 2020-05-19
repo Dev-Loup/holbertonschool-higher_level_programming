@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """ Class Square creation with size attributes.
 """
+
+
 class Square:
     """Class Square declaration based on size.
        Function requires to be provided with a correct size int.
