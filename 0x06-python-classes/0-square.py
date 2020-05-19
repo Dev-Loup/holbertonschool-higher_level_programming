@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""Square class declaration
+"""
+
+
 class Square:
-    """Square class declaration
-    This class declares a Square class without attributes nor functions
+    """Empty class
     """
     pass
