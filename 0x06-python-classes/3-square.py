@@ -1,16 +1,13 @@
 #!/usr/bin/python3
-
 """ Class Square creation module
     A Blueprint for squares
 """
 
 
 class Square:
-
     """Set the class square"""
 
     def __init__(self, size=0):
-
         """Iniatiate Attributes for Square class.
         Args:
           size: integer with size of the square.
@@ -27,10 +24,9 @@ class Square:
             raise TypeError("size must be an integer")
 
     def area(self):
-
         """Square Area method.
         Return:
           The Area of the square.
         """
 
-        return self.__size * 2
+        return self.__size * self.__size
