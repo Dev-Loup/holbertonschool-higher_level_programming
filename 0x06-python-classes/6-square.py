@@ -8,7 +8,7 @@ class Square:
     """Set the class square"""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Iniatiate Attributes for Square class.
+        """Initiate Attributes for Square class.
         Args:
           size: integer with size of the square.
           position: tuple of square location
@@ -79,7 +79,7 @@ class Square:
         """Printing method.
            My_print generates an # composed square
         """
-        if self.__size > 0:
+        if self.__size != 0:
             if self.__position[1] is not 0:
                 print("\n" * self.__position[0], end="")
             for X in range(self.__size):
