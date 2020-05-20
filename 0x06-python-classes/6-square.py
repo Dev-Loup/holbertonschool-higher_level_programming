@@ -14,8 +14,8 @@ class Square:
           position: tuple of square location
         """
 
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     def area(self):
         """Square Area method.
@@ -29,12 +29,12 @@ class Square:
         """Printing method.
            My_print generates an # composed square
         """
-        if self.__size != 0:
-            if self.__position[1] is not 0:
-                print("" * self.__position[1])
-            for X in range(self.__size):
-                print(" " * self.__position[0], end="")
-                print("#" * self.__size)
+        if self.size != 0:
+            if self.position[1] is not 0:
+                print("" * self.position[1])
+            for X in range(self.size):
+                print(" " * self.position[0], end="")
+                print("#" * self.size)
         else:
             print()
 
