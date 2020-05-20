@@ -14,8 +14,29 @@ class Square:
           position: tuple of square location
         """
 
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
+
+    def area(self):
+        """Square Area method.
+        Return:
+          The Area of the square.
+        """
+
+        return self.__size ** 2
+
+    def my_print(self):
+        """Printing method.
+           My_print generates an # composed square
+        """
+        if self.__size != 0:
+            if self.__position[1] is not 0:
+                print("" * self.__position[1])
+            for X in range(self.__size):
+                print(" " * self.__position[0], end="")
+                print("#" * self.__size)
+        else:
+            print()
 
     @property
     def size(self):
@@ -39,7 +60,8 @@ class Square:
         if type(value) is int:
             if value < 0:
                 raise ValueError("size must be >= 0")
-            self.__size = value
+            else:
+                self.__size = value
         else:
             raise TypeError("size must be an integer")
 
@@ -59,31 +81,10 @@ class Square:
           value: data of position
         """
 
-        if type(value) is not tuple or value[2] is not None:
+        if type(value) is not tuple or len(value) is not 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         if type(value[0]) is not int and type(value[1]) is not int:
             raise TypeError("position must be a tuple of 2 positive integers")
         if value[0] < 0 or value[1] < 0:
             raise ValueError("position must be a tuple of 2 positive integers")
         self.__position = value
-
-    def area(self):
-        """Square Area method.
-        Return:
-          The Area of the square.
-        """
-
-        return self.__size ** 2
-
-    def my_print(self):
-        """Printing method.
-           My_print generates an # composed square
-        """
-        if self.__size != 0:
-            if self.__position[1] is not 0:
-                print("\n" * self.__position[1], end="")
-            for X in range(self.size):
-                print(" " * self.__position[0], end="")
-                print("#" * self.__size)
-        else:
-            print()
