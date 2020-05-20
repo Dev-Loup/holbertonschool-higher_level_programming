@@ -11,17 +11,9 @@ class Square:
         """Iniatiate Attributes for Square class.
         Args:
           size: integer with size of the square.
-        Raises:
-          ValueError: if size is lesser than 0.
-          TypeError: if size is not an integer.
         """
 
-        if type(size) is int:
-            if size < 0:
-                raise ValueError("size must be >= 0")
-            self.__size = size
-        else:
-            raise TypeError("size must be an integer")
+        self.__size = size
 
     @property
     def size(self):
@@ -42,10 +34,10 @@ class Square:
           TypeError: if size is not an integer.
         """
 
-        if type(size) is int:
-            if size < 0:
+        if type(value) is int:
+            if value < 0:
                 raise ValueError("size must be >= 0")
-            self.__size = size
+            self.__size = value
         else:
             raise TypeError("size must be an integer")
 
