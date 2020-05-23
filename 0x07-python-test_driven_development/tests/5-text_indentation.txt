@@ -1,0 +1,102 @@
+=========================================
+Test Document for module 5-text_indentation.py
+=========================================
+
+This module checks the module behaviour in specific situations.
+Syntaxis:
+    ``text_indentation(text)``
+
+=========================================
+1. Function: ``text_indentation`` test cases
+=========================================
+
+This function indents text each of these characters: ., ? and :
+
+1.1. Import function Testing
+    >>> text_indentation = __import__("5-text_indentation").text_indentation
+
+1.2. Argument missing Testing
+    1.2.1. No text given
+        >>> text_indentation()
+        Traceback (most recent call last):
+        TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+    1.2.2 More than one text given
+        >>> text_indentation("hi. ho", "ha? lo")
+        Traceback (most recent call last):
+        TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+1.3. Argument invalid input
+    1.3.1. text is None
+        >>> text_indentation(None)
+        Traceback (most recent call last):
+        TypeError: text must be a string
+
+    1.3.2 text is Float
+        >>> text_indentation(10.5)
+        Traceback (most recent call last):
+        TypeError: text must be a string
+    
+    1.3.3 text is list
+        >>> text_indentation([])
+        Traceback (most recent call last):
+        TypeError: text must be a string
+
+    1.3.4 text is boolean
+        >>> text_indentation(True)
+        Traceback (most recent call last):
+        TypeError: text must be a string
+
+    1.3.5 Argument text is Boolean
+        >>> text_indentation(True)
+        Traceback (most recent call last):
+        TypeError: text must be a string
+
+    1.3.6 text is dictionary
+        >>> text_indentation({'text': "ho: ha"})
+        Traceback (most recent call last):
+        TypeError: text must be a string
+
+    1.3.7 text is Set
+        >>> text_indentation(set())
+        Traceback (most recent call last):
+        TypeError: text must be a string
+
+    1.3.8 text is tuple
+        >>> text_indentation(())
+        Traceback (most recent call last):
+        TypeError: text must be a string
+
+    1.3.9 text is int
+        >>> text_indentation(5)
+        Traceback (most recent call last):
+        TypeError: text must be a string
+
+1.4 Results Testing
+    1.4.1 text is empty
+        >>> text_indentation("")
+        <BLANKLINE>
+            
+    1.4.2 text has no indent characters
+        >>> text_indentation("hello world")
+        hello world
+
+    1.4.3 text is just indent characters
+        >>> text_indentation("?:")
+        <BLANKLINE>
+        <BLANKLINE>
+        <BLANKLINE>
+        <BLANKLINE>
+        <BLANKLINE>        
+    
+    1.4.4 text has indent characters
+        >>> text_indentation("hello? somebody is there :mom: dad")
+        hello
+        <BLANKLINE>
+        somebody is there
+        <BLANKLINE>
+        mom
+        <BLANKLINE>
+        dad
+
+
