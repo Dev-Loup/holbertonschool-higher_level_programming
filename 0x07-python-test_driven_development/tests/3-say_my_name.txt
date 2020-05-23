@@ -1,0 +1,150 @@
+=========================================
+Test Document for module 3-say_my_name.py
+=========================================
+
+This module checks the module behaviour in specific situations.
+Syntaxis:
+    ``say_my_name(first_name, last_name="")``
+
+=========================================
+1. Function: ``say_my_name`` test cases
+=========================================
+
+This function returns the addition of its arguments.
+
+1.1. Import function Testing
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+1.2. Argument missing Testing
+    1.2.1. No Arguments given
+        >>> say_my_name()
+        Traceback (most recent call last):
+        TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+    1.2.2. No last_name given
+        >>> say_my_name("bob")
+        My name is bob
+
+    1.2.3 More than three arguments given
+        >>> say_my_name("bob", "clay", "more")
+        Traceback (most recent call last):
+        TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+1.3. Argument invalid input
+    1.3.1. Arguments are None
+        >>> say_my_name(None, None)
+        Traceback (most recent call last):
+        TypeError: first_name must be a string
+
+    1.3.2 Argument first_name is None
+        >>> say_my_name(None, "clay")
+        Traceback (most recent call last):
+        TypeError: first_name must be a string
+
+    1.3.3 Argument last_name is None
+        >>> say_my_name("bob", None)
+        Traceback (most recent call last):
+        TypeError: last_name must be a string
+
+    1.3.4 Arguments are int
+        >>> say_my_name(10, 12)
+        Traceback (most recent call last):
+        TypeError: first_name must be a string
+
+    1.3.5 Arguments first_name is int
+        >>> say_my_name(10, "clay")
+        Traceback (most recent call last):
+        TypeError: first_name must be a string
+
+    1.3.6 Argument last_name is int
+        >>> say_my_name("clay", 10)
+        Traceback (most recent call last):
+        TypeError: last_name must be a string
+    
+    1.3.7 Arguments are lists
+        >>> say_my_name([], [])
+        Traceback (most recent call last):
+        TypeError: first_name must be a string
+
+    1.3.8 argument first_name is a list
+        >>> say_my_name([], "clay")
+        Traceback (most recent call last):
+        TypeError: first_name must be a string
+
+    1.3.9 Argument B is a list
+        >>> say_my_name("bob", [])
+        Traceback (most recent call last):
+        TypeError: last_name must be a string
+
+    1.3.10 Arguments are booleans
+        >>> say_my_name(False, True)
+        Traceback (most recent call last):
+        TypeError: first_name must be a string
+
+    1.3.11 Argument first_name is Boolean
+        >>> say_my_name(True, "clay")
+        Traceback (most recent call last):
+        TypeError: first_name must be a string
+    
+    1.3.12 Argument last_name is boolean
+        >>> say_my_name("bob", False)
+        Traceback (most recent call last):
+        TypeError: last_name must be a string
+
+    1.3.13 Arguments are dictionaries
+        >>> say_my_name({'name': "bob"}, {'last_name': "clay"})
+        Traceback (most recent call last):
+        TypeError: first_name must be a string
+    
+    1.3.14 Argument first_name is a dictionary
+        >>> say_my_name({'name': "bob"}, "clay")
+        Traceback (most recent call last):
+        TypeError: first_name must be a string
+
+    1.3.15 Argument last_name is dictionary
+        >>> say_my_name("bob", {'last_name': "clay"})
+        Traceback (most recent call last):
+        TypeError: last_name must be a string
+
+    1.3.16 Arguments are Sets
+        >>> say_my_name(set(), set())
+        Traceback (most recent call last):
+        TypeError: first_name must be a string
+
+    1.3.17 Argument first_name is set
+        >>> say_my_name(set(), "clay")
+        Traceback (most recent call last):
+        TypeError: first_name must be a string
+    
+    1.3.18 Argument last_name is set
+        >>> say_my_name("bob", set())
+        Traceback (most recent call last):
+        TypeError: last_name must be a string
+
+    1.3.19 Arguments are tuple
+        >>> say_my_name((), ())
+        Traceback (most recent call last):
+        TypeError: first_name must be a string
+
+    1.3.20 Argument first_name is tuple
+        >>> say_my_name((), "clay")
+        Traceback (most recent call last):
+        TypeError: first_name must be a string
+
+    1.3.21 Argument B is tuple
+        >>> say_my_name("bob", ())
+        Traceback (most recent call last):
+        TypeError: last_name must be a string
+
+1.4 Results Testing
+    1.4.1 Argument empty string
+        >>> say_my_name("", "")
+        My name is 
+    
+    1.4.2 first_name is empty str
+        >>> say_my_name("", "clay")
+        My name is clay
+
+    1.4.3 last_name is empty str
+        >>> say_my_name("bob", "")
+        My name is bob
