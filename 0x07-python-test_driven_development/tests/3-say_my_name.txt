@@ -10,7 +10,7 @@ Syntaxis:
 1. Function: ``say_my_name`` test cases
 =========================================
 
-This function returns the addition of its arguments.
+This function prints the name given.
 
 1.1. Import function Testing
     >>> say_my_name = __import__("3-say_my_name").say_my_name
@@ -139,7 +139,7 @@ This function returns the addition of its arguments.
 1.4 Results Testing
     1.4.1 Argument empty string
         >>> say_my_name("", "")
-        My name is 
+        My name is
     
     1.4.2 first_name is empty str
         >>> say_my_name("", "clay")
