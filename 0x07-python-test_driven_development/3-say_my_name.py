@@ -24,6 +24,7 @@ def say_my_name(first_name, last_name=""):
         raise TypeError("last_name must be a string")
     print("My name is", end="")
     if first_name:
-        print(" " + first_name, end="")
+        print(" " + first_name + " ", end="")
     if last_name:
-        print(" " + last_name, end="")
+        print(last_name, end="")
+    print()
