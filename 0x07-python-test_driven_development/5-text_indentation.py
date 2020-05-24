@@ -30,4 +30,3 @@ def text_indentation(text):
             if text[idx - 1] in lim or text[idx - 1] == " ":
                 continue
         print(text[idx], end="")
-    print()
