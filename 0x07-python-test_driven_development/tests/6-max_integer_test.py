@@ -33,8 +33,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([0]), 0)
         self.assertEqual(max_integer([1, 1, 1]), 1)
         self.assertEqual(max_integer([0, 0]), 0)
-        self.assertEqual(max_integer([0, 0.1]), 0.1)
-        self.assertEqual(max_integer([0, -0.1]), 0)
+        self.assertAlmostEqual(max_integer([0, 0.1]), 0.1)
+        self.assertAlmostEqual(max_integer([0, -0.1]), 0)
         self.assertEqual(max_integer([]), None)
 
     def raise_error(self):
