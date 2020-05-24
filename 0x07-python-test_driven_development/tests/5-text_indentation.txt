@@ -75,7 +75,6 @@ This function indents text each of these characters: ., ? and :
 1.4 Results Testing
     1.4.1 text is empty
         >>> text_indentation("")
-        <BLANKLINE>
             
     1.4.2 text has no indent characters
         >>> text_indentation("hello world")
@@ -86,8 +85,7 @@ This function indents text each of these characters: ., ? and :
         ?
         <BLANKLINE>
         :
-        <BLANKLINE>
-        <BLANKLINE>        
+        <BLANKLINE>       
     
     1.4.4 text has indent characters
         >>> text_indentation("hello? somebody is there :mom: dad")
