@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-"""Unittest for max_integer([..])
+"""
+    6-max_integer_test unittest module.
+    Subclasses:
+      TestMaxInteger: unittest verification
 """
 import unittest
 max_integer = __import__('6-max_integer').max_integer
+
 
 class TestMaxInteger(unittest.TestCase):
     """verify multiple conditions
@@ -12,7 +16,7 @@ class TestMaxInteger(unittest.TestCase):
         raise_error(self)
     """
 
-    def valid_max(self):
+    def test_valid_max(self):
         """test_arguments.
            Args:
              Self: Subclass argument
@@ -27,11 +31,15 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([0]), 0)
         self.assertEqual(max_integer([1, 1, 1]), 1)
         self.assertEqual(max_integer([0, 0]), 0)
+
+    def test_valid_exceptions(self):
+        """test particular cases.
+        """
         self.assertAlmostEqual(max_integer([0, 0.1]), 0.1)
         self.assertAlmostEqual(max_integer([0, -0.1]), 0)
         self.assertEqual(max_integer([]), None)
 
-    def raise_error(self):
+    def test_raise_error(self):
         """check error being raised.
            Args:
              Self: subclass argument
@@ -43,8 +51,4 @@ class TestMaxInteger(unittest.TestCase):
         self.assertRaises(TypeError, max_integer, [1, 2, set()])
         self.assertRaises(TypeError, max_integer, [1, 2, ()])
         self.assertRaises(TypeError, max_integer, 12)
-        self.assertRaises(TypeError, max_integer, 'hello')
-        self.assertRaises(TypeError, max_integer, ())
-        self.assertRaises(TypeError, max_integer, {})
-        self.assertRaises(TypeError, max_integer, set())
         self.assertRaises(TypeError, max_integer, [1, [1, 2]])
