@@ -16,7 +16,7 @@ def text_indentation(text):
         Raises:
           TypeError: text must be an string
     """
-    fixed = []
+
     idx = 0
     lim = ('.', '?', ':')
 
@@ -24,13 +24,10 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     for idx in range(len(text)):
         if text[idx] in lim:
-            fixed.append(text[idx])
-            fixed.append("\n")
-            fixed.append("\n")
+            print(text[idx], end="\n\n")
             continue
         if text[idx] == " ":
             if text[idx - 1] in lim or text[idx - 1] == " ":
                 continue
-        fixed.append(text[idx])
-    fixed = ''.join(fixed)
-    print(fixed)
+        print(text[idx], end="")
+    print()
