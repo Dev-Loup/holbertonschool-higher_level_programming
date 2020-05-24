@@ -83,19 +83,19 @@ This function indents text each of these characters: ., ? and :
 
     1.4.3 text is just indent characters
         >>> text_indentation("?:")
+        ?
         <BLANKLINE>
-        <BLANKLINE>
-        <BLANKLINE>
+        :
         <BLANKLINE>
         <BLANKLINE>        
     
     1.4.4 text has indent characters
         >>> text_indentation("hello? somebody is there :mom: dad")
-        hello
+        hello?
         <BLANKLINE>
-        somebody is there
+        somebody is there :
         <BLANKLINE>
-        mom
+        mom:
         <BLANKLINE>
         dad
 

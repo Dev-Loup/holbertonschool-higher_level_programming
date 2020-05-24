@@ -24,6 +24,7 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     for idx in range(len(text)):
         if text[idx] in lim:
+            fixed.append(text[idx])
             fixed.append("\n")
             fixed.append("\n")
             continue
