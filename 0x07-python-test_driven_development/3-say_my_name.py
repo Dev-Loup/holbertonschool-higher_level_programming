@@ -27,4 +27,4 @@ def say_my_name(first_name, last_name=""):
         print(" " + first_name, end="")
     if last_name:
         print(" " + last_name, end="")
-    print()
+    print(" ")

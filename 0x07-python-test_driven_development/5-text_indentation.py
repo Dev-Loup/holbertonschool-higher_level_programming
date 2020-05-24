@@ -28,7 +28,7 @@ def text_indentation(text):
             fixed.append("\n")
             continue
         if text[idx] == " ":
-            if text[idx - 1] in lim or text[idx + 1] in lim:
+            if text[idx - 1] in lim or text[idx - 1] == " ":
                 continue
         fixed.append(text[idx])
     fixed = ''.join(fixed)
