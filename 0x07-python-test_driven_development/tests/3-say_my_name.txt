@@ -23,7 +23,7 @@ This function prints the name given.
 
     1.2.2. No last_name given
         >>> say_my_name("bob")
-        My name is bob
+        My name is bob 
 
     1.2.3 More than three arguments given
         >>> say_my_name("bob", "clay", "more")
@@ -147,4 +147,4 @@ This function prints the name given.
 
     1.4.3 last_name is empty str
         >>> say_my_name("bob", "")
-        My name is bob
+        My name is bob 
