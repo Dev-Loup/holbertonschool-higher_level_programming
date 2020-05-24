@@ -1,14 +1,8 @@
 #!/usr/bin/python3
+"""Unittest for max_integer([..])
 """
-    6-max_integer_test unittest module.
-    Subclasses:
-      TestMaxInteger: unittest verification
-"""
-
-
 import unittest
 max_integer = __import__('6-max_integer').max_integer
-
 
 class TestMaxInteger(unittest.TestCase):
     """verify multiple conditions
