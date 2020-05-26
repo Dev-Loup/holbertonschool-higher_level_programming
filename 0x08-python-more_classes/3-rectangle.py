@@ -86,5 +86,6 @@ class Rectangle:
             return ""
         for Y in range(self.__height):
             draw += ("#" * self.__width)
-            draw += "\n"
+            if Y < (self.__height - 1):
+                draw += "\n"
         return draw
