@@ -3,7 +3,7 @@
 """
 
 
-class FormRectangle:
+class Rectangle:
     """Class Rectangle
     """
 
