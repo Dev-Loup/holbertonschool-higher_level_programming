@@ -19,13 +19,13 @@ class MyInt(int):
 
         self.value = value
 
-    def __equal__(self, randomvalue):
+    def __eq__(self, randomvalue):
         """ Inverse equal values
         """
 
         return self.value != randomvalue
 
-    def __different__(self, randomvalue):
+    def __ne__(self, randomvalue):
         """ Inverse different values
         """
         return self.value == randomvalue
