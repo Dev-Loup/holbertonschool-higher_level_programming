@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """ Writing new files module
     Functions:
-        write_file: write a file
+        append_write: write a file or append if exists
 """
 
 
-def write_file(filename="", text=""):
-    """ Write a new file
+def append_write(filename="", text=""):
+    """ Write a new file or append info if exists
         Args:
             filename: string containing the name or "" if
             not given.
@@ -14,5 +14,5 @@ def write_file(filename="", text=""):
         Return: number of chars written
     """
 
-    with open(filename, 'w', encoding='utf8') as fl_opened:
+    with open(filename, 'a', encoding="utf-8") as fl_opened:
         return fl_opened.write(text)
