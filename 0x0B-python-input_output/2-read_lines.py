@@ -17,8 +17,10 @@ def read_lines(filename="", nb_lines=0):
 
     with open(filename, encoding="utf-8") as fl_opened:
         fl_list_lines = fl_opened.readlines()
-        for idx in nb_lines:
+        if nb_lines <= 0 or nb_lines >= len(fl_list_lines):
+            nb_lines = len(fl_list_lines)
+        for idx in range(nb_lines):
             if fl_list_lines[idx]:
-                print("{}".format(fl_list_lines[i]))
+                print("{}".format(fl_list_lines[idx]))
             else:
                 break
