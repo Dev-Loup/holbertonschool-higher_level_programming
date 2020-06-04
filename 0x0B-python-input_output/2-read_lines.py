@@ -15,12 +15,11 @@ def read_lines(filename="", nb_lines=0):
             number of lines to print
     """
 
-    with open(filename, encoding="utf-8") as fl_opened:
+    with open(filename, encoding='utf8') as fl_opened:
         fl_list_lines = fl_opened.readlines()
         if nb_lines <= 0 or nb_lines >= len(fl_list_lines):
-            nb_lines = len(fl_list_lines)
-        for idx in range(nb_lines):
-            if fl_list_lines[idx]:
-                print("{}".format(fl_list_lines[idx]))
-            else:
-                break
+            for line in fl_list_lines:
+                print(line, end="")
+        else:
+            for idx in range(nb_lines):
+                print(fl_list_lines[idx], end="")
