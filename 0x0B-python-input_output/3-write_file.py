@@ -15,4 +15,4 @@ def write_file(filename="", text=""):
     """
 
     with open(filename, 'w', encoding='utf8') as fl_opened:
-        return fl.opened.write(text)
+        return fl_opened.write(text)
