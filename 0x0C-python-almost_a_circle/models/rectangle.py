@@ -137,3 +137,18 @@ class Rectangle(Base):
                                           self.__y,
                                           self.__width,
                                           self.__height)
+
+    def display(self):
+        """ Print a Rectangle with
+            position management
+            Args:
+            self.__x: X axis
+            self.__y: Y axis
+            self.__width: first size
+            Self.__height: second size
+        """
+        if self.__y > 0:
+            print("\n" * self.__y, end="")
+        for line in range(self.__height):
+            print(" " * self.__x, end="")
+            print("#" * self.__width)
