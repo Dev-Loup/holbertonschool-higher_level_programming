@@ -136,7 +136,7 @@ class Rectangle(Base):
             Return: predefined string
         """
 
-        return "[Rectangle]"\
+        return "[Rectangle] "\
                "({}) {}/{} - {}/{}".format(self.id,
                                            self.x,
                                            self.y,
