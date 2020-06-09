@@ -30,7 +30,7 @@ class Square(Rectangle):
             Return: predefined string
         """
 
-        return "[Square]"\
+        return "[Square] "\
                "({}) {}/{} - {}".format(self.id,
                                         self.x,
                                         self.y,
