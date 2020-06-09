@@ -37,35 +37,35 @@ class Rectangle(Base):
         super().__init__(id)
 
     @property
-    def set_width(self):
+    def width(self):
         """ get width from class
         """
 
         return self.__width
 
     @property
-    def set_height(self):
+    def height(self):
         """ get height from class
         """
 
         return self.__height
 
     @property
-    def set_x(self):
+    def x(self):
         """ get x from class
         """
 
         return self.__x
 
     @property
-    def set_y(self):
+    def y(self):
         """ get y from class
         """
 
         return self.__y
 
-    @set_width.setter
-    def set_width(self, width):
+    @width.setter
+    def width(self, width):
         """ get width from class
             Args:
                 width: value to set
@@ -77,8 +77,8 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
         self.__width = width
 
-    @set_height.setter
-    def set_height(self, height):
+    @height.setter
+    def height(self, height):
         """ get height from class
             Args:
                 height: value to set
@@ -90,8 +90,8 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
         self.__height = height
 
-    @set_x.setter
-    def set_x(self, x):
+    @x.setter
+    def x(self, x):
         """ get x from class
             Args:
                 x: value to set
@@ -103,8 +103,8 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
         self.__x = x
 
-    @set_y.setter
-    def set_y(self, y):
+    @y.setter
+    def y(self, y):
         """ get y from class
             Args:
                 y: value to set
@@ -121,15 +121,15 @@ class Rectangle(Base):
             Return: Area value
         """
 
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """ print the rectangle with #
             representation.
         """
 
-        for line in range(self.__height):
-            print("#" * self.__width)
+        for line in range(self.height):
+            print("#" * self.width)
 
     def __str__(self):
         """ Print default definition
@@ -138,26 +138,26 @@ class Rectangle(Base):
 
         return "[Rectangle]"\
                "({}) {}/{} - {}/{}".format(self.id,
-                                           self.__x,
-                                           self.__y,
-                                           self.__width,
-                                           self.__height)
+                                           self.x,
+                                           self.y,
+                                           self.width,
+                                           self.height)
 
     def display(self):
         """ Print a Rectangle with
             position management
             Args:
-            self.__x: X axis
-            self.__y: Y axis
-            self.__width: first size
-            Self.__height: second size
+            self.x: X axis
+            self.y: Y axis
+            self.width: first size
+            Self.height: second size
         """
 
-        if self.__y > 0:
-            print("\n" * self.__y, end="")
-        for line in range(self.__height):
-            print(" " * self.__x, end="")
-            print("#" * self.__width)
+        if self.y > 0:
+            print("\n" * self.y, end="")
+        for line in range(self.height):
+            print(" " * self.x, end="")
+            print("#" * self.width)
 
     def update(self, *args, **kwargs):
         """ update a class square with
@@ -167,20 +167,16 @@ class Rectangle(Base):
                 **kwargs: keyworded args
         """
 
-        setter = ['id', 'set_width',
-                  'set_height',
-                  'set_x',
-                  'set_y']
+        setter = ['id', 'width',
+                  'height',
+                  'x',
+                  'y']
         if args:
             for counter, arg in enumerate(args):
                 setattr(self, setter[counter], arg)
         else:
             for key, value in kwargs.items():
-                if key != 'id':
-                    attr_key = "set_" + key
-                else:
-                    attr_key = key
-                setattr(self, attr_key, value)
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """ Returns a dictionary of
@@ -188,7 +184,7 @@ class Rectangle(Base):
         """
 
         return {'id': self.id,
-                'width': self.set_width,
-                'height': self.set_height,
-                'x': self.set_x,
-                'y': self.set_y}
+                'width': self.width,
+                'height': self.height,
+                'x': self.x,
+                'y': self.y}
