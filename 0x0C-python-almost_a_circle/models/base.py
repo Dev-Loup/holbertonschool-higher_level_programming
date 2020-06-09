@@ -60,7 +60,7 @@ class Base():
         dict_list = []
         with open(file, 'w') as docfile:
             if list_objs is None:
-                docfile.write([])
+                docfile.write("[]")
             else:
                 for instance in list_objs:
                     dict_list.append(instance.to_dictionary())
