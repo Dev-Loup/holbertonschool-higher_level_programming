@@ -9,11 +9,20 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """ class square
+        Priv instance attributes:
+            super init attributes from Rectangle
+        Public methods:
+            size: set the super class width and height
+            update: updates a class with given args or kwargs
+            to_dictionary: returns a kwargs dictionary
+    """
     def __init__(self, size, x=0, y=0, id=None):
         """ Square instantiation
             super init Rectangle:
                 (width, height, x, y, id)
         """
+
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -43,6 +52,13 @@ class Square(Rectangle):
         self.set_height = size
 
     def update(self, *args, **kwargs):
+        """ update a class square with
+            args o kwargs
+            Args:
+                *args: no keyworded args
+                **kwargs: keyworded args
+        """
+
         setter = ['id',
                   'size',
                   'set_x',
@@ -61,6 +77,8 @@ class Square(Rectangle):
     def to_dictionary(self):
         """ Returns a dictionary of
             the class
+            Return:
+                kwargs dictionary
         """
 
         return {'id': self.id,

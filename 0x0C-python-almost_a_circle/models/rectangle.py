@@ -11,10 +11,13 @@ from models.base import Base
 class Rectangle(Base):
     """ Rectangle class
         (arg) defines the argument treated
-        functions:
+        Pub methods:
             set_(arg): setter & getter for
                 attributes
             area(): returns area value
+            display(): prints a rectangle draw with #
+            update(): update class with args or kwargs
+            to_dictionary(): returns a kwarg dictionary from instance
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):

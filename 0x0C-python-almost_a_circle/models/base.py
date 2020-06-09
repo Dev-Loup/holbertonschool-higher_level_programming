@@ -14,11 +14,22 @@ class Base():
             __nb_objects: number of objects
         Pub instance attributes:
             id: instance identification
+        Static methods:
+            to_json_string: from dict_list to json_str
+            from_json_string: from json_str to dict_list
+        Class methods:
+            save_to_file: from inst_list to json_file
+            class_method: make an instance from **kwargs
+            load_from_file: instantiate and list a json_file of
+                            kwargs
     """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """ instance constructor
+        """
+
         if id is not None:
             self.id = id
         else:
@@ -57,9 +68,9 @@ class Base():
 
     @staticmethod
     def from_json_string(json_string):
-        """ Return a list from a json file
+        """ Return a list from a json string
             Args:
-                json_string: json file
+                json_string: json string
         """
 
         if json_string in (None, []):
@@ -73,6 +84,7 @@ class Base():
             Args:
                 **dictionary: kwargs of class
         """
+
         if cls.__name__ == "Square":
             dummy = cls(1)
         elif cls.__name__ == "Rectangle":
@@ -82,7 +94,8 @@ class Base():
 
     @classmethod
     def load_from_file(cls):
-        """ Returns a list of instances
+        """ Instantiate and return a list of
+            instances from json file
         """
 
         file = cls.__name__ + '.json'
