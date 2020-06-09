@@ -29,6 +29,7 @@ class Rectangle(Base):
                 y: second position
                 id: identification
         """
+
         self.__width = width
         self.__height = height
         self.__x = x
@@ -119,6 +120,7 @@ class Rectangle(Base):
         """ calculates rectangle area
             Return: Area value
         """
+
         return self.__width * self.__height
 
     def display(self):
@@ -150,6 +152,7 @@ class Rectangle(Base):
             self.__width: first size
             Self.__height: second size
         """
+
         if self.__y > 0:
             print("\n" * self.__y, end="")
         for line in range(self.__height):
@@ -157,6 +160,13 @@ class Rectangle(Base):
             print("#" * self.__width)
 
     def update(self, *args, **kwargs):
+        """ update a class square with
+            args o kwargs
+            Args:
+                *args: no keyworded args
+                **kwargs: keyworded args
+        """
+
         setter = ['id', 'set_width',
                   'set_height',
                   'set_x',

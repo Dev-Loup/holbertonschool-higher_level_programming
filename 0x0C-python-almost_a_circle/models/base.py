@@ -19,7 +19,7 @@ class Base():
             from_json_string: from json_str to dict_list
         Class methods:
             save_to_file: from inst_list to json_file
-            class_method: make an instance from **kwargs
+            create: make an instance from **kwargs
             load_from_file: instantiate and list a json_file of
                             kwargs
     """
