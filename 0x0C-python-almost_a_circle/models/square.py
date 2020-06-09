@@ -63,7 +63,7 @@ class Square(Rectangle):
                   'size',
                   'x',
                   'y']
-        if args:
+        if args and len(args) > 0:
             for counter, arg in enumerate(args):
                 setattr(self, setter[counter], arg)
         else:
