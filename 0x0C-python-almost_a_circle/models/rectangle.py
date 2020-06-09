@@ -132,11 +132,11 @@ class Rectangle(Base):
         """
 
         return "[Rectangle]"\
-               "({}) {}/{} -{}/{}".format(self.id,
-                                          self.__x,
-                                          self.__y,
-                                          self.__width,
-                                          self.__height)
+               "({}) {}/{} - {}/{}".format(self.id,
+                                           self.__x,
+                                           self.__y,
+                                           self.__width,
+                                           self.__height)
 
     def display(self):
         """ Print a Rectangle with
@@ -152,3 +152,30 @@ class Rectangle(Base):
         for line in range(self.__height):
             print(" " * self.__x, end="")
             print("#" * self.__width)
+
+    def update(self, *args, **kwargs):
+        setter = ['id', 'set_width',
+                  'set_height',
+                  'set_x',
+                  'set_y']
+        if args:
+            for counter, arg in enumerate(args):
+                setattr(self, setter[counter], arg)
+        else:
+            for key, value in kwargs.items():
+                if key != 'id':
+                    attr_key = "set_" + key
+                else:
+                    attr_key = key
+                setattr(self, attr_key, value)
+
+    def to_dictionary(self):
+        """ Returns a dictionary of
+            the class
+        """
+
+        return {'id': self.id,
+                'width': self.set_width,
+                'height': self.set_height,
+                'x': self.set_x,
+                'y': self.set_y}

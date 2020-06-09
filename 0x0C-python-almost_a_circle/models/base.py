@@ -5,6 +5,8 @@
         Base: set Base geometry parameters
 """
 
+import json
+
 
 class Base():
     """ Set geometry Base parameters
@@ -17,16 +19,80 @@ class Base():
     __nb_objects = 0
 
     def __init__(self, id=None):
-        self.id = id
-
-    @property
-    def set_id(self):
-        return self.id
-
-    @set_id.setter
-    def set_id(self, id):
         if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
             self.id = self.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """ returns a JSON string
+            Args:
+                list_dictionaries: data to represent
+        """
+
+        if list_dictionaries in (None, []):
+            return "[]"
+        else:
+            return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """ Write a Json file with list_objs
+            Args:
+                cls: class name
+                list_objs: list of instances
+        """
+
+        file = cls.__name__ + '.json'
+        dict_list = []
+        with open(file, 'w') as docfile:
+            if list_objs is None:
+                docfile.write([])
+            else:
+                for instance in list_objs:
+                    dict_list.append(instance.to_dictionary())
+                docfile.write(Base.to_json_string(dict_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ Return a list from a json file
+            Args:
+                json_string: json file
+        """
+
+        if json_string in (None, []):
+            return []
+        else:
+            return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Create and set a new instance
+            Args:
+                **dictionary: kwargs of class
+        """
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        elif cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """ Returns a list of instances
+        """
+
+        file = cls.__name__ + '.json'
+        inst_list = []
+        try:
+            with open(file, 'r') as docfile:
+                docread = docfile.read()
+                doclist = Base.from_json_string(docread)
+            for kwargs in doclist:
+                inst_list.append(cls.create(**kwargs))
+            return inst_list
+        except IOError:
+            return inst_list
