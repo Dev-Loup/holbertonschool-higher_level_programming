@@ -22,7 +22,7 @@ def all_states():
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
     states = cursor.fetchall()
     cursor.close()
-    connection.close()
+    database.close()
     for row in states:
         print(row)
 
