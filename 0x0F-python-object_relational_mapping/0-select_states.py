@@ -21,10 +21,10 @@ def all_states():
     cursor = database.cursor()
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
     states = cursor.fetchall()
-    cursor.close()
-    database.close()
     for row in states:
         print(row)
+    cursor.close()
+    database.close()
 
 
 if __name__ == '__main__':
