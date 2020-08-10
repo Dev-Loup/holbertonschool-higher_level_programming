@@ -15,10 +15,10 @@ def cities_by_st():
                                passwd=sys.argv[2],
                                db=sys.argv[3])
     cursor = database.cursor()
-    cr.execute("SELECT cities.name FROM cities\
-                INNER JOIN states ON cities.state_id = states.id\
-                WHERE states.name = %s\
-                ORDER BY cities.id", (sys.argv[4], ))
+    cursor.execute("SELECT cities.name FROM cities\
+                    INNER JOIN states ON cities.state_id = states.id\
+                    WHERE states.name = %s\
+                    ORDER BY cities.id", (sys.argv[4], ))
     state_list = cursor.fetchall()
     first = 0
     for city in state_list:
@@ -27,9 +27,9 @@ def cities_by_st():
         print("%s" % city, end="")
         first += 1
     print("")
-    cr.close()
-    db.close()
+    cursor.close()
+    database.close()
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     cities_by_st()
