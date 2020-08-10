@@ -3,6 +3,9 @@
     Contains Cities MySql query functions
 """
 
+import sys
+import MySQLdb
+
 
 def cities_by_st():
     """ Print all cities in the State
