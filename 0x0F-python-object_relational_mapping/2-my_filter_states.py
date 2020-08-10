@@ -26,7 +26,7 @@ def find_states():
     cursor = database.cursor()
     cursor.execute("SELECT *\
                     FROM states\
-                    WHERE name LIKE '{}'\
+                    WHERE BINARY name LIKE '{}'\
                     ORDER BY id ASC"
                    .format(sys.argv[4]))
     states = cursor.fetchall()
