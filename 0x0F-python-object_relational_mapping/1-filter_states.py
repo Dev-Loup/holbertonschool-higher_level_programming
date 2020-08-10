@@ -21,7 +21,7 @@ def n_states():
     cursor = database.cursor()
     cursor.execute("SELECT *\
                     FROM states\
-                    WHERE name REGEXP '^[Nn]'\
+                    WHERE name REGEXP '(?-i)^[N]'\
                     ORDER BY id ASC")
     states = cursor.fetchall()
     for row in states:
