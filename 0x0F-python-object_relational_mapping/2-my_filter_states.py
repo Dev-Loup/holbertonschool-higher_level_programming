@@ -27,8 +27,8 @@ def find_states():
     cursor.execute("SELECT *\
                     FROM states\
                     WHERE name LIKE '{}'\
-                    ORDER BY id ASC"\
-                    .format(sys.argv[4]))
+                    ORDER BY id ASC"
+                   .format(sys.argv[4]))
     states = cursor.fetchall()
     for row in states:
         print(row)
