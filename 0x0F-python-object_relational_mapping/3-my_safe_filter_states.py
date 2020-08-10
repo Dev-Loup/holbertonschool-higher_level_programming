@@ -24,10 +24,11 @@ def find_states():
         port=3306
     )
     cursor = database.cursor()
-    cursor.execute(f"SELECT *\
-                    FROM states\
-                    WHERE BINARY name LIKE '{sys.argv[4]}'\
-                    ORDER BY id ASC")
+    the_query = "SELECT *\
+                 FROM states\
+                 WHERE BINARY name LIKE %s\
+                 ORDER BY id ASC"
+    cursor.execute(the_query, (sys.argv[4], ))
     states = cursor.fetchall()
     for row in states:
         print(row)
