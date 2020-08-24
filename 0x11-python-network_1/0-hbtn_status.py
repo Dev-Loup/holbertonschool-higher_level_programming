@@ -3,11 +3,12 @@
     Here is for making requests
 """
 
+import urllib.request
 if __name__ == '__main__':
-    import urllib.request
     with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
         html = response.read()
-        print(f"""Body response:
-               \t- type: {type(html)}
-               \t- content: {html}
-               \t- utf8 content: {html.decode('utf8')}""")
+        print("Body response:\n\
+               \t- type: {}\n\
+               \t- content: {}\n\
+               \t- utf8 content: {}\n"
+              .format(type(html), html, html.decode('utf-8')))
