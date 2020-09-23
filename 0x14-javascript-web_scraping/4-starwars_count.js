@@ -12,7 +12,7 @@ const options = {
 };
 request.get(options, function (error, response, body) {
   if (error) {
-    return console.log(error);
+    return console.error(error);
   }
   const movies = JSON.parse(body).results;
   for (const movie of movies) {
