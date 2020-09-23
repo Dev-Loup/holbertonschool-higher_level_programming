@@ -1,8 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 const url = process.argv[2];
-const apiPeople = 'https://swapi-api.hbtn.io/api/people';
-const people = '/18/';
+const people = '18';
 let count = 0;
 const options = {
   url: url,
@@ -16,8 +15,10 @@ request.get(options, function (error, response, body) {
   }
   const movies = JSON.parse(body).results;
   for (const movie of movies) {
-    if (movie.characters.includes(apiPeople + people)) {
-      count++;
+    for (const character of movie.characters) {
+      if (character.includes(people)) {
+        count++;
+      }
     }
   }
   console.log(count);
